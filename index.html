@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 年工作总结暨 2026 年工作计划 - 效率工程部</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Space+Grotesk:wght@300;500;700&family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --void-black: #0a0a0f;
+            --deep-space: #12121a;
+            --nebula: #1a1a2e;
+            --starlight: #e8e8ed;
+            --electric-blue: #4f46e5;
+            --cyber-cyan: #06b6d4;
+            --quantum-purple: #7c3aed;
+            --matrix-green: #10b981;
+            --amber-alert: #f59e0b;
+            --font-display: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-body: 'Noto Sans SC', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--void-black);
+            color: var(--starlight);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .background {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            animation: bgPulse 15s ease-in-out infinite;
+        }
+        @keyframes bgPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .grid-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(79, 70, 229, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 70, 229, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .slide-cover { text-align: center; }
+        .slide-number {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--electric-blue);
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            opacity: 0.7;
+        }
+        .main-title {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--starlight) 0%, var(--cyber-cyan) 50%, var(--electric-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+        .subtitle {
+            font-family: var(--font-mono);
+            font-size: clamp(20px, 2.5vw, 28px);
+            color: var(--electric-blue);
+            letter-spacing: 8px;
+            margin-bottom: 60px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .info-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+        }
+        .info-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cyber-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .info-value { font-size: 16px; color: var(--starlight); }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 48px);
+            font-weight: 700;
+            color: var(--starlight);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--cyber-cyan), transparent);
+        }
+        .section-title.red {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-title.green {
+            background: linear-gradient(135deg, var(--matrix-green), var(--cyber-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            background: rgba(18, 18, 26, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; }
+        th {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(6, 182, 212, 0.2));
+            color: var(--cyber-cyan);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 18px 20px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+            color: var(--starlight);
+        }
+        tr:hover { background: rgba(79, 70, 229, 0.1); }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--electric-blue), var(--cyber-cyan));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 25px 50px rgba(79, 70, 229, 0.25);
+        }
+        .card:hover::before { opacity: 1; }
+        .card.red::before { background: linear-gradient(180deg, #ff6b6b, #ee5a5a); }
+        .card.green::before { background: linear-gradient(180deg, var(--matrix-green), var(--cyber-cyan)); }
+        .card.orange::before { background: linear-gradient(180deg, var(--amber-alert), #f97316); }
+        .card-number {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--electric-blue);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        .card-title { font-size: 18px; font-weight: 700; color: var(--starlight); margin-bottom: 12px; }
+        .card-text { font-size: 14px; color: rgba(232, 232, 237, 0.7); line-height: 1.8; }
+        blockquote {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.05));
+            border-left: 4px solid var(--cyber-cyan);
+            border-radius: 0 12px 12px 0;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            position: relative;
+        }
+        blockquote::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 80px;
+            color: var(--electric-blue);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px; left: 20px;
+        }
+        blockquote p { font-size: 16px; color: var(--starlight); position: relative; z-index: 1; }
+        blockquote footer { margin-top: 15px; font-size: 14px; color: var(--cyber-cyan); font-style: normal; }
+        .code-box {
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1a);
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            line-height: 2;
+            color: var(--starlight);
+            overflow-x: auto;
+            margin: 30px 0;
+            position: relative;
+        }
+        .code-box::before {
+            content: '◆◆◆';
+            position: absolute;
+            top: 10px; right: 15px;
+            color: var(--electric-blue);
+            letter-spacing: 4px;
+            font-size: 10px;
+        }
+        ul, ol { list-style: none; padding-left: 0; margin: 20px 0; }
+        li { padding: 12px 0 12px 30px; position: relative; color: rgba(232, 232, 237, 0.9); }
+        li::before {
+            content: '▸';
+            position: absolute; left: 0;
+            color: var(--cyber-cyan);
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        li:hover::before { transform: translateX(5px); }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+        .tag.red { background: rgba(239, 68, 68, 0.2); color: #ff6b6b; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .tag.orange { background: rgba(245, 158, 11, 0.2); color: var(--amber-alert); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .scope-item {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .scope-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--matrix-green);
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+        }
+        .scope-icon { font-size: 32px; margin-bottom: 10px; }
+        .scope-text { font-family: var(--font-mono); font-size: 14px; color: var(--starlight); letter-spacing: 1px; }
+        .transform-box {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 30px 0;
+        }
+        .transform-title {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--cyber-cyan);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .transform-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: var(--starlight);
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+        }
+        .arrow { color: var(--electric-blue); font-size: 24px; margin: 0 20px; font-weight: bold; }
+        .vision-box {
+            background: linear-gradient(135deg, var(--electric-blue), var(--quantum-purple));
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        .vision-text { font-size: 22px; font-weight: 700; color: white; position: relative; z-index: 1; }
+        .todo-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .todo-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .support-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(79, 70, 229, 0.05));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .box-title {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--cyber-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+        }
+        .todo-item, .support-item {
+            padding: 12px 0;
+            font-size: 14px;
+            color: rgba(232, 232, 237, 0.8);
+            border-bottom: 1px solid rgba(79, 70, 229, 0.1);
+        }
+        .todo-item:last-child, .support-item:last-child { border-bottom: none; }
+        .todo-item::before { content: '✓'; color: var(--matrix-green); margin-right: 10px; font-weight: bold; }
+        .support-item::before { content: '★'; color: var(--amber-alert); margin-right: 10px; }
+        .slide-end { text-align: center; }
+        .end-title {
+            font-family: var(--font-display);
+            font-size: clamp(60px, 8vw, 100px);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cyber-cyan), var(--electric-blue), var(--quantum-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        .end-subtitle {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            color: var(--starlight);
+            letter-spacing: 10px;
+        }
+        @media (max-width: 768px) {
+            .slide { padding: 40px 20px; }
+            .scope-grid { grid-template-columns: repeat(2, 1fr); }
+            .todo-section { grid-template-columns: 1fr; }
+            .transform-row { flex-direction: column; gap: 10px; }
+        }
+        @media print {
+            .background, .grid-overlay { display: none; }
+            .slide { min-height: auto; page-break-after: always; padding: 40px 30px; }
+            body { background: white; color: black; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Slide 1: 封面 -->
+    <div class="slide slide-cover">
+        <p class="slide-number">01 / COVER</p>
+        <h1 class="main-title">2025 年工作总结<br>暨 2026 年工作计划</h1>
+        <p class="subtitle">效率工程部 2026 年述职</p>
+        <div class="info-grid">
+            <div class="info-card">
+                <p class="info-label">📅 会议时间</p>
+                <p class="info-value">2 月 5 日上午</p>
+            </div>
+            <div class="info-card">
+                <p class="info-label">📍 会议地点</p>
+                <p class="info-value">17 楼文慧堂</p>
+            </div>
+            <div class="info-card">
+                <p class="info-label">👥 参会人员</p>
+                <p class="info-value">曾任伟、曾任果、梁丽霞、雷超、张建财、王斯文、杨清、王皓、梁诗敏、黄玉芝、谢俊杰</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: 目录 -->
+    <div class="slide">
+        <p class="slide-number">02 / AGENDA</p>
+        <h2 class="section-title">目录</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>序号</th><th>内容模块</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>01</td><td>2025 年复盘</td><td>工作复盘与反思</td></tr>
+                    <tr><td>02</td><td>战略机会点洞察</td><td>结合年度经营计划</td></tr>
+                    <tr><td>03</td><td>2026 年三件大事</td><td>从战略机会点确定的核心工作</td></tr>
+                    <tr><td>04</td><td>大事拆解</td><td>计划和具体措施</td></tr>
+                    <tr><td>05</td><td>年度目标分解</td><td>月度计划和具体措施</td></tr>
+                    <tr><td>06</td><td>团队管理计划</td><td>组织能力建设</td></tr>
+                    <tr><td>07</td><td>资源支持需求</td><td>需要的支持和帮助</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 3: 2025 年复盘 -->
+    <div class="slide">
+        <p class="slide-number">03 / REVIEW</p>
+        <h2 class="section-title red">一、2025 年工作复盘</h2>
+        <div class="card-grid">
+            <div class="card red">
+                <p class="card-number">01</p>
+                <h3 class="card-title">🔴 关键问题反馈</h3>
+                <p class="card-text">
+                    <span class="tag red">大曾老师</span>信息化需求响应不够及时<br><br>
+                    <span class="tag red">大曾老师</span>拜访客户表在系统的录入和信息拉通存在问题<br><br>
+                    <span class="tag red">大曾老师</span>同学会签到等基础需求的响应不足
+                </p>
+            </div>
+            <div class="card orange">
+                <p class="card-number">02</p>
+                <h3 class="card-title">⚠️ 改进建议</h3>
+                <p class="card-text">
+                    <span class="tag orange">雷超</span>需要建立"做事的文化"<br><br>
+                    <span class="tag orange">梁丽霞</span>内部项目核算需要更精细，便于追踪投入产出比<br><br>
+                    <span class="tag orange">梁丽霞</span>提高交付标准，加强成员对业务和财务的理解能力
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: 战略机会点 -->
+    <div class="slide">
+        <p class="slide-number">04 / STRATEGY</p>
+        <h2 class="section-title">二、战略机会点洞察</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">01</p>
+                <h3 class="card-title">行业知识库与大模型迭代</h3>
+                <p class="card-text">联席成长官中客户对 AI 产品不满意的地方都要回收反馈，持续迭代产品</p>
+            </div>
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">02</p>
+                <h3 class="card-title">业财一体化推进</h3>
+                <p class="card-text">核心是让产品经理理解业务流程，更重要的是<strong>基于 AI 的使用来设计流程</strong></p>
+            </div>
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">03</p>
+                <h3 class="card-title">需求管理改革</h3>
+                <p class="card-text">需要有人对需求开发进行严格管理，摆脱过去"有需求直接找老谢"的逻辑</p>
+            </div>
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">04</p>
+                <h3 class="card-title">内部 AI 产品研发转型</h3>
+                <p class="card-text">从职能制走向项目制，让项目组快速迭代。联席成长官可作为试点</p>
+            </div>
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">05</p>
+                <h3 class="card-title">客户信息拉通</h3>
+                <p class="card-text">解决客户信息散落在各部门的问题</p>
+            </div>
+            <div class="card">
+                <p class="card-number" style="color: var(--cyber-cyan);">06</p>
+                <h3 class="card-title">高质量产品组织建设</h3>
+                <p class="card-text">提高产品上线要求的标准</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: 护城河建设 -->
+    <div class="slide">
+        <p class="slide-number">05 / FOUNDATION</p>
+        <h2 class="section-title">三、2026 年计划 - 护城河建设</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th>建设方向</th><th>具体目标</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>系统稳定性</td><td>保障业务连续性，减少故障</td></tr>
+                    <tr><td>研发效率</td><td>优化流程，提高交付速度</td></tr>
+                    <tr><td>AI 技术落地</td><td>推动垂直大模型与业务深度融合</td></tr>
+                    <tr><td>数据驱动能力</td><td>建立客户信息统一沉淀机制</td></tr>
+                    <tr><td>响应能力</td><td>提升信息化需求响应度</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="transform-box">
+            <p class="transform-title">Key Transformations</p>
+            <div class="transform-row">
+                <span>被动响应需求</span>
+                <span class="arrow">→</span>
+                <span>主动驱动业务数字化</span>
+            </div>
+            <div class="transform-row">
+                <span>职能制</span>
+                <span class="arrow">→</span>
+                <span>项目制</span>
+            </div>
+            <div class="transform-row">
+                <span>嵌入 AI</span>
+                <span class="arrow">→</span>
+                <span>基于 AI 设计流程</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: 三件大事 -->
+    <div class="slide">
+        <p class="slide-number">06 / PRIORITIES</p>
+        <h2 class="section-title" style="text-align: center; display: block;">2026 年三件大事</h2>
+        <div class="code-box">
+┌─────────────────────────────────────────────────────────┐
+│  <strong style="color: var(--electric-blue);">1️⃣ 团队改造以及基建治理</strong>                                │
+│     解决稳定性与效率问题                                 │
+├─────────────────────────────────────────────────────────┤
+│  <strong style="color: var(--matrix-green);">2️⃣ 以财务为核心的业财一体化与经营数智化</strong>                    │
+│     覆盖：业财 / 销售 / 教务 / 教研                       │
+├─────────────────────────────────────────────────────────┤
+│  <strong style="color: var(--quantum-purple);">3️⃣ 以自研垂直大模型为核心，推动 AI RaaS</strong>                   │
+│     从"对话框"到业务交付工具，AI 驱动的交付转型              │
+└─────────────────────────────────────────────────────────┘
+        </div>
+        <blockquote>
+            <p><strong style="color: var(--cyber-cyan);">协同机制：</strong>用周会或双周会的模式保持协同（张建财建议）</p>
+        </blockquote>
+    </div>
+
+    <!-- Slide 7: 大事一 -->
+    <div class="slide">
+        <p class="slide-number">07 / PRIORITY-1</p>
+        <h2 class="section-title red">三件大事拆解（1/3）</h2>
+        <h3 style="font-size: 24px; color: var(--starlight); margin-bottom: 25px;">团队改造以及基建治理</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th style="width: 80px;">序号</th><th>措施</th><th style="width: 150px;">责任人</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>01</td><td>重新设计需求开发流程，对需求研发严格管理</td><td>谢俊杰</td></tr>
+                    <tr><td>02</td><td>建立做事的文化</td><td>雷超</td></tr>
+                    <tr><td>03</td><td>提高产品上线标准</td><td>谢俊杰</td></tr>
+                    <tr><td>04</td><td>提升信息化需求响应度</td><td>谢俊杰</td></tr>
+                    <tr><td>05</td><td>解决拜访客户表录入、签到等基础业务流程数字化</td><td>谢俊杰</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card" style="margin-top: 25px;">
+            <h3 class="card-title" style="color: var(--matrix-green);">🎯 核心目标</h3>
+            <div style="display: flex; gap: 40px; margin-top: 15px;">
+                <span style="color: rgba(232,232,237,0.8);">✓ 系统稳定性提升</span>
+                <span style="color: rgba(232,232,237,0.8);">✓ 研发效率优化</span>
+                <span style="color: rgba(232,232,237,0.8);">✓ 需求响应提速</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: 大事二 -->
+    <div class="slide">
+        <p class="slide-number">08 / PRIORITY-2</p>
+        <h2 class="section-title green">三件大事拆解（2/3）</h2>
+        <h3 style="font-size: 24px; color: var(--starlight); margin-bottom: 25px;">以财务为核心的业财一体化与经营数智化</h3>
+        <div class="scope-grid">
+            <div class="scope-item">
+                <span class="scope-icon">💰</span>
+                <span class="scope-text">业财</span>
+            </div>
+            <div class="scope-item">
+                <span class="scope-icon">📈</span>
+                <span class="scope-text">销售</span>
+            </div>
+            <div class="scope-item">
+                <span class="scope-icon">📚</span>
+                <span class="scope-text">教务</span>
+            </div>
+            <div class="scope-item">
+                <span class="scope-icon">📖</span>
+                <span class="scope-text">教研</span>
+            </div>
+        </div>
+        <blockquote>
+            <p>核心是让产品经理理解业务流程，但更重要的是，未来要<strong>基于 AI 的使用来设计流程</strong>，而不是在陈旧的流程上嵌入 AI</p>
+            <footer>— 曾院长</footer>
+        </blockquote>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th style="width: 80px;">序号</th><th>措施</th><th>目标</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>01</td><td>内部项目核算精细化</td><td>追踪投入产出比</td></tr>
+                    <tr><td>02</td><td>高标准交付</td><td>提升交付质量</td></tr>
+                    <tr><td>03</td><td>成员业务/财务能力培养</td><td>加强理解能力</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 9: 大事三 -->
+    <div class="slide">
+        <p class="slide-number">09 / PRIORITY-3</p>
+        <h2 class="section-title">三件大事拆解（3/3）</h2>
+        <h3 style="font-size: 24px; color: var(--starlight); margin-bottom: 25px;">以自研垂直大模型为核心，推动 AI RaaS</h3>
+        <div class="vision-box">
+            <p class="vision-text">从"对话框" → 业务交付工具 → AI 驱动的交付转型</p>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr><th style="width: 80px;">序号</th><th>事项内容</th><th style="width: 150px;">责任人</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>01</td><td>建立行业知识库，迭代自研大模型</td><td>谢俊杰</td></tr>
+                    <tr><td>02</td><td>联席成长官 AI 产品反馈回收与迭代</td><td>谢俊杰</td></tr>
+                    <tr><td>03</td><td>内部 AI 产品研发：项目制转型</td><td>产品中心</td></tr>
+                    <tr><td>04</td><td>以周会/双周会机制与产品协同推进 AI RaaS</td><td>谢俊杰</td></tr>
+                    <tr><td>05</td><td>评估全域线下业务 AI 应用可能性及方案</td><td>效率工程部</td></tr>
+                    <tr><td>06</td><td>解决客户信息系统沉淀、部门拉通问题</td><td>谢俊杰</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card" style="margin-top: 25px; border-color: var(--amber-alert);">
+            <h3 class="card-title" style="color: var(--amber-alert);">🚀 试点项目</h3>
+            <p class="card-text"><strong style="color: var(--starlight);">联席成长官</strong> - 试跑项目制的 AI 智能体研发流程（产品中心为第一责任人）</p>
+        </div>
+    </div>
+
+    <!-- Slide 10: 待办事项与资源需求 -->
+    <div class="slide">
+        <p class="slide-number">10 / ACTION</p>
+        <h2 class="section-title">2026 年待办事项与支持需求</h2>
+        <div class="todo-section">
+            <div class="todo-box">
+                <p class="box-title">📋 核心待办清单</p>
+                <div class="todo-item">建立行业知识库，迭代自研大模型</div>
+                <div class="todo-item">重新设计需求开发流程，对需求研发严格管理</div>
+                <div class="todo-item">解决客户信息系统沉淀、部门拉通问题</div>
+                <div class="todo-item">以联席成长官为试点，产品中心建设客户回收池</div>
+                <div class="todo-item">提升信息化需求响应度（拜访表录入、签到等）</div>
+                <div class="todo-item">评估全域线下业务 AI 应用可能性及方案</div>
+            </div>
+            <div class="support-box">
+                <p class="box-title">🤝 需要的支持和帮助</p>
+                <div class="support-item">组织支持：职能制向项目制转型的资源配置</div>
+                <div class="support-item">流程支持：需求管理流程的改革授权</div>
+                <div class="support-item">人才支持：业务/财务能力培训资源</div>
+                <div class="support-item">机制支持：周会/双周会协同机制的建立</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: 结束页 -->
+    <div class="slide slide-end">
+        <p class="slide-number">11 / END</p>
+        <h1 class="end-title">谢谢</h1>
+        <p class="end-subtitle">Q & A</p>
+        <p style="margin-top: 60px; font-family: var(--font-mono); font-size: 12px; color: rgba(232,232,237,0.4); letter-spacing: 2px;">
+            DOCUMENT GENERATED · 2026.02.28
+        </p>
+    </div>
+</body>
+</html>
