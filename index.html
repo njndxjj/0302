@@ -560,6 +560,111 @@
             color: var(--pop-black);
             margin: 5px 0;
         }
+
+        /* 年会战略风格 - 财务目标卡片 */
+        .strategy-cream { background: var(--pop-cream); }
+        .target-value-lg {
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--pop-black);
+            text-shadow: 3px 3px 0px var(--pop-pink);
+            line-height: 1;
+        }
+        .target-label-lg {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pop-black);
+            margin-top: 10px;
+        }
+        .target-badge-lg {
+            display: inline-block;
+            background: var(--pop-black);
+            color: var(--pop-white);
+            padding: 10px 30px;
+            font-weight: 900;
+            font-size: 16px;
+            margin-top: 20px;
+            letter-spacing: 3px;
+        }
+        .strategy-section {
+            background: var(--pop-white);
+            border: 4px solid var(--pop-black);
+            box-shadow: 8px 8px 0px var(--pop-black);
+            padding: 40px;
+            margin: 30px 0;
+        }
+        .strategy-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--pop-black);
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .position-shift-lg {
+            background: var(--pop-black);
+            color: var(--pop-white);
+            padding: 30px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            margin: 20px 0;
+            border: 4px solid var(--pop-black);
+            box-shadow: 8px 8px 0px var(--pop-gray);
+        }
+        .position-shift-lg span {
+            color: var(--pop-pink);
+            font-size: 36px;
+            margin: 0 20px;
+        }
+        .efficiency-dept {
+            background: linear-gradient(135deg, var(--pop-purple), var(--pop-pink));
+            color: var(--pop-white);
+        }
+        .efficiency-list {
+            list-style: none;
+            padding: 0;
+        }
+        .efficiency-list li {
+            padding: 12px 15px;
+            margin: 8px 0;
+            background: rgba(255,255,255,0.2);
+            border-left: 4px solid var(--pop-white);
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .offline-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .offline-item {
+            background: var(--pop-white);
+            border: 4px solid var(--pop-black);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 6px 6px 0px var(--pop-black);
+        }
+        .offline-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--pop-black);
+            margin-bottom: 15px;
+        }
+        .offline-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--pop-black);
+            margin-bottom: 15px;
+        }
+        .offline-text {
+            font-size: 14px;
+            color: var(--pop-black);
+            line-height: 1.8;
+            font-weight: 600;
+        }
         .todo-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -655,7 +760,113 @@
         </div>
     </div>
 
-    <!-- Slide 2: 目录 -->
+    <!-- Slide 2: 博商线下战略方向 -->
+    <div class="slide strategy-cream">
+        <p class="slide-number">02 / STRATEGY</p>
+        <h2 class="section-title" style="text-align: center; display: block;">博商线下战略方向</h2>
+
+        <div class="strategy-section">
+            <h3 class="strategy-title">🎯 一、全新定位</h3>
+            <div style="text-align: center; padding: 30px; background: var(--pop-black); color: var(--pop-white); font-size: 24px; font-weight: 900; border: 4px solid var(--pop-black); box-shadow: 6px 6px 0px var(--pop-pink);">
+                赋能企业成长解决方案服务商
+            </div>
+        </div>
+
+        <div class="strategy-section">
+            <h3 class="strategy-title">⚔️ 二、五大硬仗</h3>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px;">
+                <div style="background: var(--pop-pink); padding: 25px 15px; text-align: center; border: 3px solid var(--pop-black); box-shadow: 5px 5px 0px var(--pop-black);">
+                    <p style="font-size: 36px; font-weight: 900; color: var(--pop-white); margin-bottom: 10px;">01</p>
+                    <p style="font-size: 16px; font-weight: 900; color: var(--pop-white);">流量突围</p>
+                </div>
+                <div style="background: var(--pop-blue); padding: 25px 15px; text-align: center; border: 3px solid var(--pop-black); box-shadow: 5px 5px 0px var(--pop-black);">
+                    <p style="font-size: 36px; font-weight: 900; color: var(--pop-white); margin-bottom: 10px;">02</p>
+                    <p style="font-size: 16px; font-weight: 900; color: var(--pop-white);">交付升级</p>
+                </div>
+                <div style="background: var(--pop-green); padding: 25px 15px; text-align: center; border: 3px solid var(--pop-black); box-shadow: 5px 5px 0px var(--pop-black);">
+                    <p style="font-size: 36px; font-weight: 900; color: var(--pop-white); margin-bottom: 10px;">03</p>
+                    <p style="font-size: 16px; font-weight: 900; color: var(--pop-white);">组织提效</p>
+                </div>
+                <div style="background: var(--pop-yellow); padding: 25px 15px; text-align: center; border: 3px solid var(--pop-black); box-shadow: 5px 5px 0px var(--pop-black);">
+                    <p style="font-size: 36px; font-weight: 900; color: var(--pop-black); margin-bottom: 10px;">04</p>
+                    <p style="font-size: 16px; font-weight: 900; color: var(--pop-black);">技术基建</p>
+                </div>
+                <div style="background: var(--pop-purple); padding: 25px 15px; text-align: center; border: 3px solid var(--pop-black); box-shadow: 5px 5px 0px var(--pop-black);">
+                    <p style="font-size: 36px; font-weight: 900; color: var(--pop-white); margin-bottom: 10px;">05</p>
+                    <p style="font-size: 16px; font-weight: 900; color: var(--pop-white);">品牌重塑</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: 2026 财务目标 -->
+    <div class="slide strategy-cream">
+        <p class="slide-number">03 / TARGETS</p>
+        <h2 class="section-title" style="text-align: center; display: block;">2026 财务目标</h2>
+
+        <div class="strategy-section">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="background: var(--pop-green); padding: 50px 30px; text-align: center; border: 4px solid var(--pop-black); box-shadow: 8px 8px 0px var(--pop-black);">
+                    <p class="target-value-lg">18 亿</p>
+                    <p class="target-label-lg">线上回款</p>
+                    <span class="target-badge-lg">必达</span>
+                </div>
+                <div style="background: var(--pop-blue); padding: 50px 30px; text-align: center; border: 4px solid var(--pop-black); box-shadow: 8px 8px 0px var(--pop-black);">
+                    <p class="target-value-lg">5000 万</p>
+                    <p class="target-label-lg">线下利润目标</p>
+                    <span class="target-badge-lg">必达</span>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 20px; font-weight: 900; color: var(--pop-pink);">关键词：必达</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: 中后台部门重点 -->
+    <div class="slide strategy-cream">
+        <p class="slide-number">04 / BACKOFFICE</p>
+        <h2 class="section-title" style="text-align: center; display: block;">中后台部门重点</h2>
+
+        <div class="position-shift-lg">
+            从"后台支持" <span>➜</span> "前线弹药库"
+        </div>
+
+        <div class="strategy-section efficiency-dept">
+            <h3 class="strategy-title" style="color: var(--pop-white);">5️⃣ 效率工程部</h3>
+            <ul class="efficiency-list">
+                <li>AI 全面赋能</li>
+                <li>全员 AI 工具化</li>
+                <li>搭建数字化交付平台</li>
+                <li>沉淀数据资产</li>
+                <li>从"课堂"到"办公室"</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: 2026 线下三件大事 -->
+    <div class="slide strategy-cream">
+        <p class="slide-number">05 / OFFLINE</p>
+        <h2 class="section-title" style="text-align: center; display: block;">2026 线下必须做好的三件大事</h2>
+
+        <div class="offline-three">
+            <div class="offline-item" style="background: var(--pop-pink);">
+                <p class="offline-number">01</p>
+                <p class="offline-title">TOB 交付</p>
+                <p class="offline-text">从卖课转向卖方案<br>以结果为导向<br>做深服务价值</p>
+            </div>
+            <div class="offline-item" style="background: var(--pop-blue);">
+                <p class="offline-number">02</p>
+                <p class="offline-title">行业 Know-How</p>
+                <p class="offline-text">沉淀垂直行业经验<br>建立专业壁垒<br>成为行业专家</p>
+            </div>
+            <div class="offline-item" style="background: var(--pop-green);">
+                <p class="offline-number">03</p>
+                <p class="offline-title">存量客户运营</p>
+                <p class="offline-text">挖掘老客户价值<br>提升转介绍与复购<br>打造私域生态</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: 目录 -->
     <div class="slide">
         <p class="slide-number">02 / AGENDA</p>
         <h2 class="section-title">目录</h2>
