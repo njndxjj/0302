@@ -374,6 +374,66 @@
             background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
         }
         .vision-text { font-size: 22px; font-weight: 700; color: var(--pop-white); position: relative; z-index: 1; text-shadow: 2px 2px 0px var(--pop-black); }
+
+        /* Comic 风格垂直 Panel - 三件大事专用 */
+        .comic-panels-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 5px solid var(--pop-black);
+            box-shadow: 10px 10px 0px var(--pop-black);
+            margin: 30px 0;
+        }
+        .comic-panel {
+            position: relative;
+            padding: 40px 35px;
+            border-bottom: 5px solid var(--pop-black);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .comic-panel:last-child { border-bottom: none; }
+        .comic-panel-1 { background: var(--pop-pink); }
+        .comic-panel-2 { background: var(--pop-blue); }
+        .comic-panel-3 { background: var(--pop-green); }
+        .comic-panel-number {
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--pop-white);
+            text-shadow: 4px 4px 0px var(--pop-black);
+            min-width: 100px;
+            text-align: center;
+        }
+        .comic-panel-content { flex: 1; }
+        .comic-panel-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--pop-white);
+            text-shadow: 3px 3px 0px var(--pop-black);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .comic-panel-desc {
+            font-size: 18px;
+            color: var(--pop-white);
+            font-weight: 700;
+            line-height: 1.8;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+        }
+        .comic-panel-badge {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: var(--pop-black);
+            color: var(--pop-white);
+            padding: 8px 20px;
+            font-weight: 900;
+            font-size: 12px;
+            border: 2px solid var(--pop-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         .todo-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -420,17 +480,16 @@
             font-family: var(--font-display);
             font-size: clamp(60px, 8vw, 100px);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--cyber-cyan), var(--electric-blue), var(--quantum-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--pop-black);
+            text-shadow: 5px 5px 0px var(--pop-pink), 10px 10px 0px var(--pop-yellow);
             margin-bottom: 20px;
         }
         .end-subtitle {
             font-family: var(--font-mono);
             font-size: 24px;
-            color: var(--starlight);
+            color: var(--pop-purple);
             letter-spacing: 10px;
+            font-weight: 700;
         }
         @media (max-width: 768px) {
             .slide { padding: 40px 20px; }
@@ -598,20 +657,39 @@
     <div class="slide">
         <p class="slide-number">06 / PRIORITIES</p>
         <h2 class="section-title" style="text-align: center; display: block;">2026 年三件大事</h2>
-        <div class="code-box">
-┌─────────────────────────────────────────────────────────┐
-│  <strong style="color: var(--electric-blue);">1️⃣ 团队改造以及基建治理</strong>                                │
-│     解决稳定性与效率问题                                 │
-├─────────────────────────────────────────────────────────┤
-│  <strong style="color: var(--matrix-green);">2️⃣ 以财务为核心的业财一体化与经营数智化</strong>                    │
-│     覆盖：业财 / 销售 / 教务 / 教研                       │
-├─────────────────────────────────────────────────────────┤
-│  <strong style="color: var(--quantum-purple);">3️⃣ 以自研垂直大模型为核心，推动 AI RaaS</strong>                   │
-│     从"对话框"到业务交付工具，AI 驱动的交付转型              │
-└─────────────────────────────────────────────────────────┘
+
+        <!-- Comic 风格垂直 Panel -->
+        <div class="comic-panels-vertical">
+            <div class="comic-panel comic-panel-1">
+                <p class="comic-panel-number">01</p>
+                <div class="comic-panel-content">
+                    <p class="comic-panel-title">团队改造以及基建治理</p>
+                    <p class="comic-panel-desc">解决稳定性与效率问题</p>
+                </div>
+                <span class="comic-panel-badge">Foundation</span>
+            </div>
+
+            <div class="comic-panel comic-panel-2">
+                <p class="comic-panel-number">02</p>
+                <div class="comic-panel-content">
+                    <p class="comic-panel-title">以财务为核心的业财一体化与经营数智化</p>
+                    <p class="comic-panel-desc">覆盖：业财 / 销售 / 教务 / 教研</p>
+                </div>
+                <span class="comic-panel-badge">Integration</span>
+            </div>
+
+            <div class="comic-panel comic-panel-3">
+                <p class="comic-panel-number">03</p>
+                <div class="comic-panel-content">
+                    <p class="comic-panel-title">以自研垂直大模型为核心，推动 AI RaaS</p>
+                    <p class="comic-panel-desc">从"对话框"到业务交付工具，AI 驱动的交付转型</p>
+                </div>
+                <span class="comic-panel-badge">AI Innovation</span>
+            </div>
         </div>
+
         <blockquote>
-            <p><strong style="color: var(--cyber-cyan);">协同机制：</strong>用周会或双周会的模式保持协同（张建财建议）</p>
+            <p><strong style="color: var(--pop-black);">协同机制：</strong>用周会或双周会的模式保持协同（张建财建议）</p>
         </blockquote>
     </div>
 
